@@ -40,11 +40,6 @@
 			path = SwiftChatTests;
 			sourceTree = "<group>";
 		};
-		961779482DF6EE820076D4DD /* SwiftChatUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SwiftChatUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +72,6 @@
 			children = (
 				9617792E2DF6EE800076D4DD /* SwiftChat */,
 				9617793E2DF6EE820076D4DD /* SwiftChatTests */,
-				961779482DF6EE820076D4DD /* SwiftChatUITests */,
 				9617792D2DF6EE800076D4DD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,9 +147,6 @@
 			dependencies = (
 				961779472DF6EE820076D4DD /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				961779482DF6EE820076D4DD /* SwiftChatUITests */,
-			);
 			name = SwiftChatUITests;
 			packageProductDependencies = (
 			);
@@ -178,6 +169,7 @@
 					};
 					9617793A2DF6EE820076D4DD = {
 						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 1630;
 						TestTargetID = 9617792B2DF6EE800076D4DD;
 					};
 					961779442DF6EE820076D4DD = {
@@ -450,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N63WMA8228;
@@ -459,6 +452,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucasbighi.SwiftChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftChatTests/Resources/SwiftChatTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftChat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftChat";
@@ -469,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N63WMA8228;
@@ -478,6 +474,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucasbighi.SwiftChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftChatTests/Resources/SwiftChatTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftChat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftChat";
