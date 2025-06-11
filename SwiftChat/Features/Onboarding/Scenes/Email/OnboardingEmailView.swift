@@ -12,29 +12,32 @@ struct OnboardingEmailView<ViewModel: OnboardingEmailViewModelProtocol>: View {
     
     var body: some View {
         VStack {
-            HStack {
-                TextField("Email", text: $viewModel.email)
-                    .keyboardType(.emailAddress)
-                    .textContentType(.emailAddress)
-                    .autocapitalization(.none)
-                    .textFieldStyle(.roundedBorder)
-                    .onChange(of: viewModel.email) { _, _ in
-                        viewModel.validateEmail()
-                    }
-                
-                Button {
-                    Task {
-                        await viewModel.checkEmailIsUsed()
-                    }
-                } label: {
-                    Text("check")
-                }
-                .disabled(!viewModel.isValidEmail)
-
-            }
+            Spacer()
             
-            Button("Avançar", action: viewModel.goToPassword)
+            TextField("Email", text: $viewModel.email)
+                .keyboardType(.emailAddress)
+                .textContentType(.emailAddress)
+                .autocapitalization(.none)
+                .textFieldStyle(.roundedBorder)
+                .onChange(of: viewModel.email) { _, _ in
+                    viewModel.validateEmail()
+                }
+            
+            Button {
+                Task {
+                    await viewModel.checkEmailIsUsed()
+                }
+            } label: {
+                Text("Check email")
+            }
+            .disabled(!viewModel.isValidEmail)
+            .buttonStyle(CustomButtonStyle.primary(isLoading: $viewModel.isCheckingEmail))
+            
+            Spacer()
+            
+            Button("Avançar", action: viewModel.goToUsername)
                 .disabled(!viewModel.isEmailUsed)
+                .buttonStyle(CustomButtonStyle.primary())
         }
         .padding()
     }
